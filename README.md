@@ -46,7 +46,8 @@ while the operator is not fully alert.
 
 ### Critical Alert — Fatigue Detected
 
-<img width="223" height="123" alt="2" src="https://github.com/user-attachments/assets/a88bd0fd-c11f-478f-b51e-2ed37a86b6f7" />
+<img width="423" height="323" alt="2" src="https://github.com/user-attachments/assets/a88bd0fd-c11f-478f-b51e-2ed37a86b6f7" />
+<img width="454" height="364" alt="5" src="https://github.com/user-attachments/assets/86dca798-32be-4de6-b052-5d6c9debe22b" />
 
 
 When eye closure exceeds 7 seconds, the entire screen turns red, the status switches to **"CRITICAL: SLEEPING!"**, and the display locks with **"FATIGUE DETECTED – SYSTEM LOCKED"**. A critical alarm sound plays. The system cannot be resumed until the operator manually presses `R` to reset, ensuring a conscious acknowledgement before work continues.
