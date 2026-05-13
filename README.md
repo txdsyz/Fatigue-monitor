@@ -32,7 +32,6 @@ Data Explorer / Grafana Dashboard
 
 ---
 
-## Screenshots
 
 ### Normal Operation — Task Complete
 
