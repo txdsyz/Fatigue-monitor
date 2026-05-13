@@ -26,16 +26,26 @@ This system simulates an industrial tool-handling task — the operator raises t
 
 ### Normal Operation — Task Complete
 
-<img width="123" height="123" alt="1" src="https://github.com/user-attachments/assets/9875132d-5b2e-449a-a0e3-da4f8ec0101e" />
+<img width="223" height="123" alt="1" src="https://github.com/user-attachments/assets/9875132d-5b2e-449a-a0e3-da4f8ec0101e" />
 
 
 When the operator successfully completes the 3-step tool workflow (Raise Tool → Hold Position → Lower Tool) with eyes open throughout, the system confirms **"TASK COMPLETE"** in green. All three steps are highlighted, and status reads **"Working Safely"**.
 
 ---
 
+**Eyes Closed — Timer Reset**
+<img width="245" height="123" alt="4" src="https://github.com/user-attachments/assets/b833486f-b536-4a76-a22e-f504256bc9c1" />
+
+When the operator closes their eyes during the Hold Position step, 
+the hold timer pauses immediately and the screen shows "Eyes Closed! 
+Timer Reset..." in orange. This prevents the task from completing 
+while the operator is not fully alert.
+
+---
+
 ### Critical Alert — Fatigue Detected
 
-<img width="123" height="123" alt="2" src="https://github.com/user-attachments/assets/a88bd0fd-c11f-478f-b51e-2ed37a86b6f7" />
+<img width="223" height="123" alt="2" src="https://github.com/user-attachments/assets/a88bd0fd-c11f-478f-b51e-2ed37a86b6f7" />
 
 
 When eye closure exceeds 7 seconds, the entire screen turns red, the status switches to **"CRITICAL: SLEEPING!"**, and the display locks with **"FATIGUE DETECTED – SYSTEM LOCKED"**. A critical alarm sound plays. The system cannot be resumed until the operator manually presses `R` to reset, ensuring a conscious acknowledgement before work continues.
@@ -44,7 +54,7 @@ When eye closure exceeds 7 seconds, the entire screen turns red, the status swit
 
 ### InfluxDB Data Explorer — Event Log
 
-<img width="231" height="123" alt="3" src="https://github.com/user-attachments/assets/1951b8a4-8262-4bcc-941e-0cc9f9226ac3" />
+<img width="331" height="223" alt="3" src="https://github.com/user-attachments/assets/1951b8a4-8262-4bcc-941e-0cc9f9226ac3" />
 
 
 Every fatigue event is recorded in InfluxDB as a time-series data point. The graph shows fatigue events plotted over time — each point on the blue line represents one incident, with the Y-axis showing eye-closure duration in seconds. Management can query this data by worker, by hour, or aggregated by day.
