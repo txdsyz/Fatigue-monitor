@@ -1,6 +1,6 @@
 # Fatigue Detection & Safety Monitoring System
 
-This system simulates an industrial tool-handling task — the operator raises their hand to mimic picking up a tool, holds for three seconds, then lowers it. At the same time, the system monitors eye closure using Eye Aspect Ratio (EAR) calculated from facial landmarks. A one-second closure triggers a warning beep; seven seconds triggers a full lockout requiring manual reset. If the operator closes their eyes mid-task, the hold timer pauses immediately to prevent unsafe completion. All fatigue events are logged to InfluxDB for shift-level trend analysis.
+This system simulates an industrial tool-handling task — the operator raises their hand to mimic picking up a tool, holds for three seconds, then lowers it. At the same time, the system monitors eye closure using Eye Aspect Ratio (EAR) calculated from facial landmarks. A one and half second closure triggers a warning beep; seven seconds triggers a full lockout requiring manual reset. If the operator closes their eyes mid-task, the hold timer pauses immediately to prevent unsafe completion. All fatigue events are logged to InfluxDB for shift-level trend analysis.
 
 ---
 
