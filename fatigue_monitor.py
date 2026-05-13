@@ -105,7 +105,7 @@ while cap.isOpened():
             closed_duration = time.time() - sleep_start_time
 
             # Pause and beep sounds are triggered only when your eyes remain closed for more than 0.5 seconds
-            if closed_duration > 1.0:
+            if closed_duration > 1.5:
                 is_eyes_closed_for_pause = True
 
             # Closing your eyes for more than 5.0 seconds triggers a critical alert
