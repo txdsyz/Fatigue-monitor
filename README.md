@@ -46,8 +46,8 @@ while the operator is not fully alert.
 
 ### Critical Alert — Fatigue Detected
 
-<img width="423" height="323" alt="2" src="https://github.com/user-attachments/assets/a88bd0fd-c11f-478f-b51e-2ed37a86b6f7" />
-<img width="454" height="364" alt="5" src="https://github.com/user-attachments/assets/86dca798-32be-4de6-b052-5d6c9debe22b" />
+<img width="245" height="123" alt="2" src="https://github.com/user-attachments/assets/a88bd0fd-c11f-478f-b51e-2ed37a86b6f7" />
+
 
 
 When eye closure exceeds 7 seconds, the entire screen turns red, the status switches to **"CRITICAL: SLEEPING!"**, and the display locks with **"FATIGUE DETECTED – SYSTEM LOCKED"**. A critical alarm sound plays. The system cannot be resumed until the operator manually presses `R` to reset, ensuring a conscious acknowledgement before work continues.
@@ -57,7 +57,7 @@ When eye closure exceeds 7 seconds, the entire screen turns red, the status swit
 ### InfluxDB Data Explorer — Event Log
 
 <img width="331" height="223" alt="3" src="https://github.com/user-attachments/assets/1951b8a4-8262-4bcc-941e-0cc9f9226ac3" />
-
+<img width="454" height="364" alt="5" src="https://github.com/user-attachments/assets/86dca798-32be-4de6-b052-5d6c9debe22b" />
 
 Every fatigue event is recorded in InfluxDB as a time-series data point. The graph shows fatigue events plotted over time — each point on the blue line represents one incident, with the Y-axis showing eye-closure duration in seconds. Management can query this data by worker, by hour, or aggregated by day.
 
