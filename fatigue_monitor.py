@@ -1,4 +1,3 @@
-#%%
 import cv2
 import mediapipe as mp
 from mediapipe.tasks import python
@@ -23,8 +22,8 @@ warning_sound = pygame.mixer.Sound('warning_beep.wav')
 
 
 INFLUX_URL = "http://localhost:8086"
-INFLUX_TOKEN = "paste-your-token-here"
-INFLUX_ORG = "my-org"
+INFLUX_TOKEN = "Z7mSq2nmZS82qpL0gqVwsjgaigebbKEKPxDiaKMy4KL2_A4-aOTxlI8adyPWjnEDjUzFbY9JOZThlXiyU6NhZA=="
+INFLUX_ORG = "Monitor"
 INFLUX_BUCKET = "fatigue_data"
 
 db_client = InfluxDBClient(url=INFLUX_URL, token=INFLUX_TOKEN, org=INFLUX_ORG)
@@ -92,7 +91,9 @@ while cap.isOpened():
     head_status, head_color = "Working Safely", (0, 255, 0)
     is_sleeping = False
     is_eyes_closed_for_pause = False
+    is_drowsy_waiting = False
 
+    # Core Defense: Eye Closure Detection
     # Core Defense: Eye Closure Detection
     if face_result.face_landmarks:
         face_lm = face_result.face_landmarks[0]
@@ -104,11 +105,15 @@ while cap.isOpened():
 
             closed_duration = time.time() - sleep_start_time
 
-            # Pause and beep sounds are triggered only when your eyes remain closed for more than 0.5 seconds
             if closed_duration > 1.5:
                 is_eyes_closed_for_pause = True
 
-            # Closing your eyes for more than 5.0 seconds triggers a critical alert
+
+            if current_step != 1 and closed_duration > 3.0 and closed_duration <= 7.0:
+                is_drowsy_waiting = True
+                if warning_sound and not pygame.mixer.get_busy():
+                    warning_sound.play()
+
             if closed_duration > 7.0:
                 is_sleeping = True
                 pygame.mixer.stop()
@@ -116,8 +121,12 @@ while cap.isOpened():
                     alarm_sound.play()
         else:
             is_eyes_closed_for_pause = False
+            is_drowsy_waiting = False
             sleep_start_time = None
             log_sleep_done = False
+
+            if current_step != -1:
+                pygame.mixer.stop()
 
     # Pose Detection (Arms)
     arm_up, arm_down = False, True
@@ -193,6 +202,9 @@ while cap.isOpened():
     # UI Rendering
     cv2.rectangle(frame, (0, 0), (w, 40), (30, 30, 30), -1)
     cv2.putText(frame, f"Status: {head_status}", (20, 25), cv2.FONT_HERSHEY_SIMPLEX, 0.7, head_color, 2)
+
+    if is_drowsy_waiting and current_step != -1:
+        cv2.putText(frame, "WARNING: WAKE UP!", (50, 160), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 165, 255), 3)
 
     if current_step == -1:
         overlay = frame.copy()
