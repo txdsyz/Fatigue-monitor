@@ -6,7 +6,7 @@ This system simulates an industrial tool-handling task — the operator raises t
 
 ## System Architecture
 
-<img width="350" height="550" alt="040dc3e6-3880-4da1-9842-4c0cd073939c" src="https://github.com/user-attachments/assets/60fd5746-3df6-4bc4-9e91-f2b2f1e89cc6" />
+<img width="400" height="500" alt="040dc3e6-3880-4da1-9842-4c0cd073939c" src="https://github.com/user-attachments/assets/60fd5746-3df6-4bc4-9e91-f2b2f1e89cc6" />
 
 
 
