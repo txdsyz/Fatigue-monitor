@@ -23,8 +23,8 @@ warning_sound = pygame.mixer.Sound('warning_beep.wav')
 
 
 INFLUX_URL = "http://localhost:8086"
-INFLUX_TOKEN = "Z7mSq2nmZS82qpL0gqVwsjgaigebbKEKPxDiaKMy4KL2_A4-aOTxlI8adyPWjnEDjUzFbY9JOZThlXiyU6NhZA=="
-INFLUX_ORG = "Monitor"
+INFLUX_TOKEN = "paste-your-token-here"
+INFLUX_ORG = "my-org"
 INFLUX_BUCKET = "fatigue_data"
 
 db_client = InfluxDBClient(url=INFLUX_URL, token=INFLUX_TOKEN, org=INFLUX_ORG)
