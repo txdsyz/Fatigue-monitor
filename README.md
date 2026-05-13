@@ -189,7 +189,7 @@ from(bucket: "fatigue_data")
 
 ---
 
-## Why InfluxDB?
+## Manage by InfluxDB 
 
 Standard relational databases (MySQL, SQLite) store rows and columns. InfluxDB is a **time-series database** — every record is automatically indexed by time, making it extremely efficient for questions like:
 
@@ -234,19 +234,3 @@ This project is built on the following open-source tools and frameworks:
 
 Audio files (`critical_alarm.wav`, `warning_beep.wav`) are original assets generated for this project and are free to use and distribute.
 
----
-
-## Project Structure
-
-```
-project/
-├── detection.py              # Main detection script
-├── pose_landmarker.task      # MediaPipe pose model
-├── face_landmarker.task      # MediaPipe face model
-├── critical_alarm.wav        # Critical alert sound
-├── warning_beep.wav          # Warning beep sound
-└── screenshots/
-    ├── task_complete.png
-    ├── fatigue_detected.png
-    └── influxdb_explorer.png
-```
