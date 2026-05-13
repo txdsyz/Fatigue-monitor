@@ -34,6 +34,7 @@ When the operator successfully completes the 3-step tool workflow (Raise Tool â†
 ---
 
 **Eyes Closed â€” Timer Reset**
+
 <img width="245" height="123" alt="4" src="https://github.com/user-attachments/assets/b833486f-b536-4a76-a22e-f504256bc9c1" />
 
 When the operator closes their eyes during the Hold Position step, 
