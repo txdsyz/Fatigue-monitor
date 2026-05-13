@@ -17,7 +17,7 @@ Real-time Alert (Screen + Audio)
     ↓
 InfluxDB (Async Event Logging)
     ↓
-Data Explorer / Grafana Dashboard
+Data Explorer / Dashboard
 ```
 
 ---
