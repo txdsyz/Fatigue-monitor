@@ -1,26 +1,15 @@
 # Fatigue Detection & Safety Monitoring System
 
-A real-time AI-powered fatigue detection system for industrial workplaces. It uses computer vision to monitor operator alertness during tool operations, triggering alarms on drowsiness and logging all fatigue events to a time-series database for management review.
+This system simulates an industrial tool-handling task — the operator raises their hand to mimic picking up a tool, holds for three seconds, then lowers it. At the same time, the system monitors eye closure using Eye Aspect Ratio (EAR) calculated from facial landmarks. A one-second closure triggers a warning beep; seven seconds triggers a full lockout requiring manual reset. If the operator closes their eyes mid-task, the hold timer pauses immediately to prevent unsafe completion. All fatigue events are logged to InfluxDB for shift-level trend analysis.
 
 ---
 
 ## System Architecture
 
 ```
-Camera Input
-    ↓
-MediaPipe AI (Face + Pose Detection)
-    ↓
-Fatigue Logic (EAR + State Machine)
-    ↓
-Real-time Alert (Screen + Audio)
-    ↓
-InfluxDB (Async Event Logging)
-    ↓
-Data Explorer / Dashboard
-```
+<img width="200" height="200" alt="040dc3e6-3880-4da1-9842-4c0cd073939c" src="https://github.com/user-attachments/assets/5d2bba13-9d21-428d-876d-a3d6ef713576" />
 
----
+
 
 ## Features
 
